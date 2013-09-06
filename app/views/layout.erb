@@ -18,6 +18,15 @@
   <title></title>
 </head>
 <body>
+  <nav>
+    <a href="/">Home</a>
+    <% if logged_in? %>
+      <a href="/logout">Logout</a>
+      <a href="/users/<%= @current_user.id %>/albums">Your Albums</a>
+    <% else %>
+      <a href="/login">Login/Create Account</a>
+    <% end %>
+  </nav>
   <%= yield %>
 </body>
 </html>

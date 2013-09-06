@@ -1,9 +1,7 @@
 <div class="container">
-  <h1>Welcome to Flaker!</h1>
-  <%= erb :_create_album_form %>
+  <h1><%= @user.name %>'s albums</h1>
   <% @albums.each do |album| %>
   	<% @album = album %>
-  	<% @user = album_user(album) %>
   	<%= erb :_album %>
   <% end %>
 </div>
